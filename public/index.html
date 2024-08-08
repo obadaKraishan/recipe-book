@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Recipe Book</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="mt-5 text-center">Advanced Recipe Book</h1>
+        <div id="authSection" class="mb-4">
+          <ul class="nav nav-tabs" id="authTabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="authTabsContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <h2 class="text-center">Login</h2>
+              <form id="loginForm" class="mb-4">
+                <div class="input-group mb-3">
+                  <input type="text" id="loginUsername" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" id="loginPassword" class="form-control" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <h2 class="text-center">Register</h2>
+              <form id="registerForm" class="mb-4">
+                <div class="input-group mb-3">
+                  <input type="text" id="registerUsername" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" id="registerPassword" class="form-control" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <form id="recipeForm" class="mb-4" style="display:none;">
+          <h2 class="text-center">Add Recipe</h2>
+          <div class="input-group mb-3">
+            <input type="text" id="recipeTitle" class="form-control" placeholder="Title" required>
+          </div>
+          <div class="input-group mb-3">
+            <textarea id="recipeIngredients" class="form-control" placeholder="Ingredients" required></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <textarea id="recipeInstructions" class="form-control" placeholder="Instructions" required></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <select id="recipeCategory" class="form-control" required>
+              <option value="">Select Category</option>
+              <option value="Appetizer">Appetizer</option>
+              <option value="Main Course">Main Course</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Beverage">Beverage</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <input type="file" id="recipeImage" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Recipe</button>
+        </form>
+        <div class="mb-4">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search recipes...">
+        </div>
+        <ul id="recipeList" class="list-group mb-4"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Modal -->
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
